@@ -7,7 +7,7 @@ struct Drink
     string name;
     double size;
     double glucose;
-    double gpl;
+    double gpl = glucose / size;
 };
 
 int compare(Drink a, Drink b)
@@ -22,8 +22,6 @@ int main()
         {"Galxose-D", 3, 75},
         {"GlucoMax", 4, 80},
         {"Sting", 5, 150}};
-    for (Drink &d : drinks)
-        d.gpl = d.glucose / d.size;
     sort(drinks.begin(), drinks.end(), compare);
     double total = 0, rem = maxi;
     cout << "Drinks taken: " << endl;
